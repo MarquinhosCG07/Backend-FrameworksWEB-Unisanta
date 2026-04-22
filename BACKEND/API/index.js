@@ -1,5 +1,14 @@
 const express = require('express');
 const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.get("/", (req, res) => {
+  res.send("Backend rodando 🚀");
+});
+
+app.listen(PORT, () => {
+  console.log("Servidor rodando na porta " + PORT);
+});
 app.use((req, res, next) => {
 res.setHeader("Access-Control-Allow-Origin", "*");
 res.setHeader('Access-Control-Allow-Methods', 'HEAD, GET, POST, PATCH, DELETE');
